@@ -32,7 +32,7 @@
 						<view class="num-wrapper">
               <!-- TODO 芋艿：钱包 -->
 							<view class="num-item" @click="goMenuPage('/pages/users/user_money/index')">
-								<text class="num">{{ userInfo.nowMoney ? Number(userInfo.nowMoney).toFixed(2) : 0 }}</text>
+								<text class="num">{{ userInfo.nowMoney ? fen2yuan(userInfo.nowMoney) : 0 }}</text>
 								<view class="txt">余额</view>
 							</view>
 							<view class="num-item" @click="goMenuPage('/pages/users/user_integral/index')">
@@ -136,6 +136,7 @@
   import * as ProductFavoriteApi from '@/api/product/favorite.js';
   import * as CouponApi from '@/api/promotion/coupon.js';
   import * as BrokerageAPI from '@/api/trade/brokerage.js'
+  import * as Util from '@/utils/util.js';
   const app = getApp();
 	export default {
 		computed: mapGetters(['isLogin', 'chatUrl', 'userInfo']),
@@ -331,6 +332,9 @@
 					this.openAuto()
 					// #endif
 				}
+			},
+			fen2yuan(price) {
+			  return Util.fen2yuan(price)
 			}
 		}
 	}
