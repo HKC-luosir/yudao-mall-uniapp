@@ -399,8 +399,8 @@
       getCouponList: function() {
         CouponApi.getMatchCouponList({
           price: this.orderInfoVo.price.payPrice,
-          spuIds: this.orderInfoVo.items.map(item => item.spuId),
-          skuIds: this.orderInfoVo.items.map(item => item.skuId),
+          spuIds: this.orderInfoVo.items.map(item => item.spuId).join(","),
+          skuIds: this.orderInfoVo.items.map(item => item.skuId).join(","),
           categoryIds: this.orderInfoVo.items.map(item => item.categoryId)
         }).then(res => {
           this.$set(this.coupon, 'list', res.data);
