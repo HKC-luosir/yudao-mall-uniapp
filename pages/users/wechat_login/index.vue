@@ -193,6 +193,10 @@
           this.$store.commit("LOGIN", {
             'token': data.accessToken
           });
+          // 保存opendId用于支付
+          this.$store.commit("OPENID", data.openId);
+          // 设置当前userId
+          this.$store.commit("SETUID", data.userId);
           this.getUserInfo();
           this.bindBrokerUser();
         }).catch(e => {

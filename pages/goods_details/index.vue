@@ -869,11 +869,11 @@
           });
         } else if (activity.type === 2) {
           uni.navigateTo({
-            url: `/pages/activity/goods_bargain_details/index?id=${this.id}&startBargainUid=${this.uid}`
+            url: `/pages/activity/goods_bargain_details/index?id=${activity.id}&startBargainUid=${this.uid}`
           });
         } else {
           uni.navigateTo({
-            url: `/pages/activity/goods_combination_details/index?id=${this.id}`
+            url: `/pages/activity/goods_combination_details/index?id=${activity.id}`
           });
         }
       },

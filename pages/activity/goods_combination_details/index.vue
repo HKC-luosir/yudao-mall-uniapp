@@ -340,7 +340,7 @@
         qrcodeSize: 600, // 二维码的大小
         promotionCode: '', // 二维码图片
         imgTop: '', // 商品图片的 base64 码
-        errT: '',  // 获得小程序码失败的提示文本
+        errT: '获取海报失败',  // 获得小程序码失败的提示文本
         posters: false, // 分享弹窗的开关
         weixinStatus: false, // 微信分享是否打开
         canvasStatus: false, // 是否显示海报
@@ -854,7 +854,7 @@
         let data = {
           pid: this.uid,
           id: this.id,
-          path: 'pages/activity/goods_seckill_details/index'
+          path: 'pages/activity/goods_combination_details/index'
         }
         getQrcode(data).then(res=>{
           base64src(res.data.code, res => {

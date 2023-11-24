@@ -95,7 +95,7 @@
 							<block v-for="(item,index) in menus" :key="index">
 								<navigator class="item" :url="item.url" hover-class="none"
 									v-if="!(item.url ==='/pages/service/index'
-									|| (item.url === '/pages/users/user_spread_user/index' && brokerageUser && brokerageUser.enabled))">
+									|| (item.url === '/pages/users/user_spread_user/index' && brokerageUser && !brokerageUser.brokerageEnabled))">
 									<image :src="item.picUrl"></image>
 									<text>{{ item.name }}</text>
 								</navigator>
