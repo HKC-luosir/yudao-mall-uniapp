@@ -8,5 +8,6 @@ export default {
 	home: state => state.app.home,
 	chatUrl: state => state.app.chatUrl,
 	systemPlatform: state => state.app.systemPlatform,
+	openid: state => state.app.openid,
 	productType: state => state.app.productType
 };
