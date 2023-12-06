@@ -187,7 +187,7 @@
         }
         // 情况二：允许授权手机号码
         const loginCode = await Routine.getCode()
-        AuthApi.weixinMiniAppLogin(phoneCode, loginCode).then(res => {
+        AuthApi.weixinMiniAppLogin(phoneCode, loginCode,'default').then(res => {
           const data = res.data;
           // TODO 芋艿：refreshToken 机制
           this.$store.commit("LOGIN", {
