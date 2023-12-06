@@ -33,7 +33,9 @@
 				<view class='list acea-row row-between-wrapper' :class='is_switch?"":"on"'>
 					<view class='item' :class='is_switch?"":"on"' hover-class='none'
 						v-for="(item,index) in productList" :key="index" @click="godDetail(item)">
+						
 						<view class='pictrue' :class='is_switch?"":"on"'>
+							<view class="no-sale-num" v-if="item.stock === 0">已售罄</view>
 							<image :src='item.picUrl' :class='is_switch?"":"on"'></image>
 							<span class="pictrue_log_class"
 								:class="is_switch ? 'pictrue_log_big' : 'pictrue_log'"
@@ -463,5 +465,20 @@
 		background-color: #fff;
 		padding-bottom: 30rpx;
 		margin-top: 172rpx;
+	}
+	
+	.no-sale-num {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		position: absolute;
+		justify-content: center;
+		align-items: center;
+		z-index:100;
+		background: rgba(0, 0, 0, 0.36);
+		border-radius: 20rpx 20rpx 0 0;
+		color: #fff;
+		font-weight: 600;
+		font-size: $bg-end;
 	}
 </style>
