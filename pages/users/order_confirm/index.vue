@@ -62,7 +62,7 @@
 						<view class='discount acea-row row-middle'>
 							<view> {{pointStatus ? "剩余积分":"当前积分"}}
 								<text class='num font-color'>
-                  {{pointStatus ? orderInfoVo.totalPoint - orderInfoVo.usedPoint : (orderInfoVo.totalPoint || 0) }}
+                  {{pointStatus ? orderInfoVo.totalPoint - orderInfoVo.usePoint : (orderInfoVo.totalPoint || 0) }}
                 </text>
 							</view>
 							<checkbox-group @change="ChangeIntegral">
