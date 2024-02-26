@@ -138,8 +138,10 @@
       return;
     }
     // 重头加载代码
-		state.pagination = paginationNull;
+		// state.pagination = paginationNull;
+    Object.assign(state.pagination,paginationNull)
 		state.currentTab = e.index;
+    state.pagination.list = []
 		getOrderList();
 	}
 
@@ -191,7 +193,7 @@
 		// 正常的确认收货流程
 		const { code } = await OrderApi.receiveOrder(order.id);
 		if (code === 0) {
-			state.pagination = paginationNull;
+      Object.assign(state.pagination,paginationNull);
 			await getOrderList();
 		}
 	}
@@ -315,7 +317,7 @@
 
 	// 下拉刷新
 	onPullDownRefresh(() => {
-		state.pagination = paginationNull;
+    Object.assign(state.pagination,paginationNull);
 		getOrderList();
 		setTimeout(function() {
 			uni.stopPullDownRefresh();
