@@ -140,6 +140,8 @@
     // 重头加载代码
 		state.pagination = paginationNull;
 		state.currentTab = e.index;
+        // 切换时应清空原有的列表
+        state.pagination.list = []
 		getOrderList();
 	}
 
