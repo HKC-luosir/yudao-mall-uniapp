@@ -255,8 +255,9 @@
       return;
     }
     state.grouponId = options.id;
+    let activityId = options.activity_id
     // 加载活动信息
-    const { code, data: activity } = await CombinationApi.getCombinationActivity(state.grouponId);
+    const { code, data: activity } = await CombinationApi.getCombinationActivity(activityId);
     state.activity = activity;
     // 加载商品信息
     const { data: spu } = await SpuApi.getSpuDetail(activity.spuId);
